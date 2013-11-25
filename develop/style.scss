@@ -25,7 +25,8 @@ ul, li
 {
 	list-style: none;
 }
-a {
+a 
+{
   color: #000;
   text-decoration: none; 
 }
@@ -348,20 +349,46 @@ header
 			top: 50%;
 		}
 	}
+	.base
+	{
+		max-width: 100%;
+	}
 	
 }
 @media screen and (min-width: 580px) {
 	.base
 	{
 		display: block;
-		max-width: 100%;
-		float: left;
-		font-size: 0.7em;
+		font-size: 0.8em;
 		ul 
 		{
-			float: right;
+			li 
+			{
+				float: left;
+				margin: 0 2%;
+			}
+
 		}
 	}
+	.firststep
+		{
+			float: left;
+			clear: both;
+			display: table-caption;
+			padding: 0.7em 5%;
+			max-width: 13%;
+			li 
+			{
+				line-height: 1.7em;
+			}
+		}
+	.secondstep
+	{
+		float: left;
+		display: table-caption;
+		padding: 1em 4.5%;
+		max-width: 13%;
+	}	
 	.redes
 	{
 		clear: both;
@@ -374,14 +401,35 @@ header
 
 }
 @media screen and (min-width: 1200px) {
-	iframe
-	{
+	.direccion
+	{	
+		max-width: 70%;
 		float: right;
+		ul 
+		{
+			padding: 3em 4%;
+			max-width: 20%;
+			margin: 0;
+			float: left;
+		}
+		.ver 
+		{
+			font-size: 1.5em;
+		}
 	}
-	.datos
+	.contacto
 	{
-		max-width: 40%;
-		padding: 2em 0 2em 8%;
+		.datos
+		{	
+			max-width: 30%;
+			padding: 2em 5% 2em 5%;
+			float: left;
+		}
 	}
+	.mapa
+	{
+		clear: both;
+	}
+	
 }
 
