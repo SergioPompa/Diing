@@ -1,8 +1,1 @@
-
-if (window.width > 1200) {
-
-	var element = document.getElementById('col');
-	if (element.className == "col3") {
-		element.className = "col1";
-	}		
-}
+$(document).ready(function(){            cambioPantalla();        //detectar cambios de pantalla    $(window).resize(cambioPantalla);           function cambioPantalla(){               if($(window).width()>990){            var element = $('.wrapper').find("*#col");            element.removeClass('col6');            element.addClass('col2');            //            element.css({ //                "background-color": "#ffe", //                "border-left": "5px solid #ccc",//                "color":"#fff"//            });        }else{            var element = $('.wrapper').find("*#col");            element.removeClass('col2');            element.addClass('col6');        }                    }       });    

@@ -352,26 +352,6 @@ a {
 h2 {
   font-size: 1.5em; }
 
-.btn {
-  display: inline-block;
-  margin-bottom: 0;
-  font-size: 1.1em;
-  font-weight: normal;
-  line-height: 2em;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  border-radius: 4px;
-  color: #ffffff;
-  background-color: #428bca;
-  border-color: #357ebd;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none; }
-
 .enl {
   display: inline-block;
   position: relative;
@@ -391,24 +371,6 @@ h2 {
 .menu, .base, .secondcustomer, .blog, .entorno, iframe {
   display: none; }
 
-.col1 {
-  width: 29.33333%;
-  padding: 0 1%;
-  margin: 0 1%;
-  float: left; }
-
-.col2 {
-  width: 62.66667%;
-  padding: 0 1%;
-  margin: 0 1%;
-  float: left; }
-
-.col3 {
-  width: 96%;
-  padding: 0 1%;
-  margin: 0 1%;
-  float: left; }
-
 .inicio {
   overflow: hidden; }
 
@@ -418,26 +380,35 @@ h2 {
     max-width: 100%;
     height: auto;
     display: cover; } }
-header h2 {
-  text-indent: -9999px;
+header img {
+  display: table;
   max-width: 100%;
-  height: auto;
-  padding: 4em 40%; }
+  margin: 6em auto; }
 
 @media screen and (min-width: 580px) {
-  header h2 {
+  header img {
     float: left;
-    padding: 0; }
+    margin: 1em 0 0 1em; }
   header .menu {
-    display: block; }
+    display: inline-block;
+    line-height: 1.5em;
+    float: right;
+    width: 65%; }
     header .menu ul {
-      float: right;
-      padding: 0 10% 0 0; }
+      margin: 1em 0;
+      padding: 0; }
     header .menu li {
       float: left;
-      padding: 0 3%;
+      padding: 0.5em 3%;
       font-size: 0.8em; } }
+@media screen and (min-width: 1000px) {
+  .menu {
+    line-height: 2em; }
+    .menu a {
+      font-size: 1.5em; } }
 @media screen and (min-width: 1200px) {
+  header img {
+    margin: 1em 0 0 2em; }
   header .menu ul {
     padding: 0 5% 0 0; }
   header .menu li {
@@ -457,13 +428,23 @@ header h2 {
   margin: 0 auto;
   text-align: center; }
   .mail a {
-    background-color: #f1f2ed; }
+    background-color: white; }
 
 @media screen and (min-width: 580px) {
   .portada h1 {
     font-size: 1.3em;
-    padding: 7em 10% 1em;
-    clear: both; } }
+    padding: 20em 10% 1em;
+    clear: both; }
+
+  .mail a {
+    background-color: #f4f3ef; } }
+@media screen and (min-width: 1000px) {
+  .portada h1 {
+    padding: 22em 10% 1em;
+    clear: both; }
+
+  .mail {
+    padding-bottom: 2em; } }
 @media screen and (min-width: 1200px) {
   .entorno {
     display: block; }
@@ -487,39 +468,76 @@ header h2 {
     font-size: 1.4em;
     padding: 7em auto 0;
     clear: both;
-    margin: 0; } }
+    margin: 0; }
+
+  .mail a {
+    background-color: #f1f2ed; } }
 .necesitas {
-  padding: 2em 8% 2em;
-  max-width: 84%;
+  padding: 2em 0;
+  max-width: 100%;
   height: auto;
   overflow: hidden;
   clear: both; }
   .necesitas p {
-    padding: 1em 0 1em;
+    padding: 0.5em 8% 1em;
     line-height: 2.2em; }
   .necesitas ul {
-    padding: 0 8% 1em; }
+    padding: 0 12% 1em; }
   .necesitas li {
     line-height: 1.8em; }
+  .necesitas h2 {
+    text-align: center;
+    background-color: rgba(255, 27, 26, 0.4);
+    padding: 1em; }
 
+@media screen and (min-width: 1000px) {
+  .AnPo {
+    background: url(images/departam_analitycs.svg) no-repeat 50% 32em; }
+    .AnPo h2 {
+      padding: 0.4em 1em; }
+    .AnPo ul {
+      margin-bottom: 18em; }
+
+  .DiGr {
+    background: url(images/colorsplat.png) no-repeat 50% 24em; }
+    .DiGr ul {
+      margin-bottom: 24em; }
+
+  .DeWe {
+    background: url(images/depart_desarrollo_web.png) no-repeat 30% 32em; }
+    .DeWe p {
+      margin-bottom: 24em; } }
 .nosotros {
-  max-width: 86%;
-  padding: 2em 7%;
+  max-width: 100%;
+  padding: 2em 0;
   line-height: 1.5em; }
+  .nosotros h2 {
+    text-align: center;
+    background-color: rgba(25, 232, 172, 0.4);
+    padding: 1em; }
+  .nosotros p {
+    padding: 0 7%; }
 
 .portfolio {
-  max-width: 90%;
+  max-width: 100%;
   height: auto;
   overflow: hidden; }
   .portfolio h2 {
-    text-align: center; }
+    text-align: center;
+    background-color: rgba(123, 123, 127, 0.8);
+    padding: 1em;
+    margin: 0 1%; }
   .portfolio img {
-    padding: 2em 5%;
+    padding: 2em 0;
     max-width: 100%; }
 
+@media screen and (min-width: 1000px) {
+  .secondcustomer {
+    display: block; } }
 .contacto {
   overflow: hidden;
-  max-width: 100%; }
+  max-width: 100%;
+  border-top: 10px solid rgba(123, 123, 127, 0.8); }
   .contacto .datos {
     max-width: 84%;
     height: auto;
@@ -579,29 +597,49 @@ header h2 {
       top: 50%; }
   .contacto .base {
     max-width: 100%; }
+  .contacto small a {
+    padding: 2em 10%; }
+  .contacto .redes p {
+    padding-left: 6%; }
+  .contacto .redes .fa-twitter-square {
+    color: #00bdf5; }
+  .contacto .redes .fa-linkedin-square {
+    color: #0072b2; }
+  .contacto .redes .fa-google-plus-square {
+    color: #dd4c39; }
+  .contacto .direccion_a {
+    padding-left: 2.5em; }
+  .contacto .direccion_b {
+    padding-right: 1.5em; }
+  .contacto .direccion_c {
+    padding-right: 1em; }
 
 @media screen and (min-width: 580px) {
   .base {
-    display: block;
-    font-size: 0.8em; }
-    .base ul li {
-      float: left;
-      margin: 0 2%; }
+    display: inline-block;
+    font-size: 0.8em;
+    width: 100%;
+    margin-top: 1em;
+    background-color: rgba(123, 123, 127, 0.8);
+    color: #FFF; }
+    .base ul {
+      padding: 0; }
 
   .firststep {
-    float: left;
-    clear: both;
     display: table-caption;
-    padding: 0.7em 5%;
-    max-width: 13%; }
+    padding: 1em 0;
+    margin-left: -1.5em; }
+    .firststep ul {
+      padding: 0; }
     .firststep li {
       line-height: 1.7em; }
 
   .secondstep {
-    float: left;
     display: table-caption;
-    padding: 1em 4.5%;
-    max-width: 13%; }
+    padding: 2.5em 0;
+    margin-right: -1.5em; }
+    .secondstep ul {
+      padding: 0; }
 
   .redes {
     clear: both; }
@@ -609,6 +647,29 @@ header h2 {
   iframe {
     display: block;
     padding: 2em 5%; } }
+@media screen and (min-width: 1000px) {
+  .direccion ul {
+    display: inline-block;
+    width: 42%;
+    padding-right: 0em;
+    margin-right: 0em; }
+  .direccion li {
+    width: 45%;
+    padding-right: 1em;
+    margin-right: 0; }
+  .direccion iframe {
+    float: right; }
+
+  .secondstep {
+    display: table; }
+    .secondstep ul {
+      margin-top: -1.5em; }
+    .secondstep li {
+      line-height: 2em; }
+
+  .firststep {
+    display: table;
+    margin-left: 0em; } }
 @media screen and (min-width: 1200px) {
   .direccion {
     max-width: 70%;

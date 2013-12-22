@@ -1,1 +1,1 @@
-if(window.width>1200){var element=document.getElementById("col");element.className=="col3"&&(element.className="col1")};
+$(document).ready(function(){function e(){if($(window).width()>990){var e=$(".wrapper").find("*#col");e.removeClass("col6");e.addClass("col2")}else{var e=$(".wrapper").find("*#col");e.removeClass("col2");e.addClass("col6")}}e();$(window).resize(e)});

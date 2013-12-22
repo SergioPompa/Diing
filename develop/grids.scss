@@ -1,0 +1,16 @@
+
+$num_cols 	: 	6;
+$padding 	:   1;
+$margin 	:   1;
+
+@for $i from 1 through $num_cols
+{
+    .col#{$i}
+    {
+        width: percentage(((100*$i)/$num_cols)-(($padding*2)+($margin*2)))/100;
+        padding: 0 percentage($padding)/100;
+        margin: 0 percentage($margin)/100;
+        float:left;
+    }
+
+}
