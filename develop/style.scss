@@ -1,20 +1,25 @@
 
-
 @import "fragmentos/normalize.scss";
 @import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+
+*,
+*:after,
+*::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 h1, h2, h3, h4, h5, h6, span, .enl
 {
 	font-family: 'Lato', sans-serif;
 	font-weight: 700;
 }
-
 p, a, label, li, legend, .submit
 {
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;	
 }
-
 body
 {
 	width: 100%;
@@ -33,7 +38,8 @@ h2
 	font-size: 1.5em;
 }
 
-.enl {
+.enl 
+{
   display: inline-block;
   position: relative;
   padding: 0 1%;
@@ -49,17 +55,14 @@ h2
   -o-user-select: none;
   user-select: none; 
 }
-
 .menu, .base, .secondcustomer, .blog, .entorno, iframe
 {
 	display: none;
 }
-
 .inicio
 {
 	overflow: hidden;
 }
-
 @media screen and (min-width: 580px) {
 	.inicio
 	{
@@ -69,7 +72,6 @@ h2
 		display: cover;
 	}
 }
-
 header
 {
 	img 
@@ -95,7 +97,6 @@ header
 			width: 65%;
 			ul 
 			{
-				
 				margin: 1em 0;
 				padding: 0;
 			}
@@ -103,7 +104,51 @@ header
 			{
 				float: left;
 				padding: 0.5em 3%;
-				font-size: 0.8em;
+				font-size: 0.9em;
+			}
+			.sombra_curva
+			{
+ 			   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+ 			   -webkit-transform: translateZ(0);
+ 			   -ms-transform: translateZ(0);
+ 			   transform: translateZ(0);
+ 			   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+ 			   display: inline-block;
+ 			   position: relative;
+ 			}
+ 			.sombra_curva:before,.sombra_curva:after 
+ 			{
+ 			   pointer-events: none;
+ 			   position: absolute;
+ 			   content: '';
+ 			   left: -20%;
+ 			   width: 140%;
+ 			   -moz-box-sizing: border-box;
+ 			   box-sizing: border-box;
+ 			   background-repeat: no-repeat;
+ 			   height: 4px;
+ 			   opacity: 0;
+ 			   -webkit-transition-duration: 0.3s;
+ 			   transition-duration: 0.3s;
+ 			   -webkit-transition-property: opacity;
+ 			   transition-property: opacity;
+ 			}
+ 			.sombra_curva:before 
+ 			{
+			    bottom: 100%;
+			    background: -webkit-radial-gradient(50% 150%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+			    background: radial-gradient(ellipse at 50% 150%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+			}
+			  
+			.sombra_curva:after 
+			{
+			    top: 100%;
+			    background: -webkit-radial-gradient(50% -50%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+			    background: radial-gradient(ellipse at 50% -50%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+ 			}
+			.sombra_curva:hover:before,.sombra_curva:hover:after 
+			{
+			    opacity: 1;
 			}
 		}
 	}
@@ -127,14 +172,11 @@ header
 		}
 		.menu
 		{
-			ul 
-			{
-				padding: 0 5% 0 0;
-			}
+			width: 55%;
 			li
 			{
-				font-size: 1.2em;
-				padding: 0 5%;
+				font-size: 0.8em;
+				padding: 0 4%;
 			}
 		}
 	}
@@ -199,18 +241,19 @@ header
 		display: block;
 		#superior
 		{
-			width: 45%;
+			width: 35%;
 			height: auto;
-			padding: 3em 2%;
+			padding: 2em 3%;
 			float: left;
 			line-height: 2em;
-			font-size: 1.2em;
+			font-size: 1em;
+			clear: both;
 		}
 		#inferior
 		{
 			display: block;
 			width: 30%;
-			padding: 12em 1.5% 8em;
+			padding: 5em 1% 18em;
 			float: right;
 			line-height: 2em;
 			i 
@@ -224,7 +267,7 @@ header
 		h1
 		{
 			font-size: 1.4em;
-			padding: 7em auto 0;
+			padding-top: 4.5em;
 			clear: both;
 			margin: 0;
 		}
@@ -235,7 +278,20 @@ header
 		{
 			background-color: rgba(241,242,237,1);
 		}
-}	
+	}	
+}
+.scroll-top, .fa-arrow-circle-up
+{
+    width: 40px;
+    height: 40px;
+    opacity: 0.4;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    display: none; 
+    text-indent: -9999px; 
+    z-index: 2000; 
+    background: url(images/arrowtop.png) no-repeat;
 }
 .necesitas
 {
@@ -284,7 +340,6 @@ header
 		{
 			margin-bottom: 24em;
 		}
-		
 	}
 	.DeWe
 	{
@@ -292,6 +347,15 @@ header
 		p 
 		{
 			margin-bottom: 24em;
+		}
+	}
+}
+@media screen and (min-width: 1200px) {
+	.AnPo
+	{
+		h2
+		{
+			padding: 1em 1em;	
 		}
 	}
 }
@@ -311,18 +375,24 @@ header
 		padding: 0 7%;
 	}
 }
-
+@media screen and (min-width: 1200px) {
+	.nosotros
+	{
+		display: none;
+	}
+}
 .portfolio
 {
 	max-width: 100%;
 	height: auto;
 	overflow: hidden;
+	padding-bottom: 4em;
+	background-color: rgba(226,226,218,1);
 	h2
 	{
 		text-align: center;
-		background-color: rgba(123,123,127,0.8);
 		padding: 1em;
-		margin: 0 1%;
+		margin: 4em 1% 0;
 	}
 	img
 	{
@@ -330,7 +400,37 @@ header
 		max-width: 100%;
 	}
 }
+#portfolio, #departament
+{
+	position: relative;
+}
+#portfolio::before, #portfolio::after, #departament::before, #departament::after 
+{
+	position: absolute;
+	content: '';
+	pointer-events: none;
+}
+.triangulos::before, .triangulos::after 
+{
+	left: 50%;
+	width: 100px;
+	height: 100px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+.triangulos::before 
+{
+	background: rgba(255,255,255,1);
+	top: -50px;	
+}
+.triangulos::after 
+{
+	background: rgba(214,194,173,1);
+	bottom: -50px;
+	z-index: 10;
+}
 @media screen and (min-width: 1000px) {
+	
 	.secondcustomer
 	{
 		display: block;
@@ -340,8 +440,8 @@ header
 {
 	overflow: hidden;
 	max-width: 100%;
-	border-top: 10px solid rgba(123,123,127,0.8);;
-
+	border-top: 150px solid rgba(214,194,173,1);
+	clear: both;
 	.datos
 	{
 		max-width: 84%;
@@ -366,7 +466,6 @@ header
 		}
 		input:focus
 		{
-
 			box-shadow: 0 0 5px rgba(255,0,0,1);
 			border: 1px solid rgba(255,0,0,0.8);
 		}
@@ -401,6 +500,7 @@ header
 			color: #fff;
 			background: rgba(0,0,0,0.8);
 			line-height: 100%;
+			padding: 0.5em;
 			text-align: center;
 			margin: 0 0 0 3%;
 		}
@@ -447,6 +547,65 @@ header
 		{
 			color: rgb(221,76,57);
 		}
+		@-webkit-keyframes flota 
+		{
+    		50% 
+    		{
+      		-webkit-transform: translateY(-3px);
+      		transform: translateY(-3px);
+    		}
+    		100% 
+    		{
+      		-webkit-transform: translateY(-6px);
+      		transform: translateY(-6px);
+    		}
+  		}
+  		@keyframes flota 
+  		{
+    		50% 
+    		{
+      		-webkit-transform: translateY(-3px);
+      		-ms-transform: translateY(-3px);
+      		transform: translateY(-3px);
+    		}
+    		100% 
+    		{
+      		-webkit-transform: translateY(-6px);
+      		-ms-transform: translateY(-6px);
+      		transform: translateY(-6px);
+    		}
+  		}
+  		.flota 
+  		{
+    		display: inline-block;
+    		-webkit-transition-duration: .5s;
+    		transition-duration: .5s;
+    		-webkit-transition-property: -webkit-transform;
+    		transition-property: transform;
+    		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    		-webkit-transform: translateZ(0);
+    		-ms-transform: translateZ(0);
+    		transform: translateZ(0);
+    		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  		}
+  		.flota:hover 
+  		{
+    		-webkit-transform: translateY(-6px);
+    		-ms-transform: translateY(-6px);
+    		transform: translateY(-6px);
+    		-webkit-animation-name: hover;
+    		animation-name: hover;
+    		-webkit-animation-duration: 1.5s;
+    		animation-duration: 1.5s;
+    		-webkit-animation-delay: 0.3s;
+    		animation-delay: 0.3s;
+    		-webkit-animation-timing-function: linear;
+    		animation-timing-function: linear;
+    		-webkit-animation-iteration-count: infinite;
+    		animation-iteration-count: infinite;
+    		-webkit-animation-direction: alternate;
+    		animation-direction: alternate;
+  		}
 	}
 	.direccion_a
 	{
@@ -508,12 +667,10 @@ header
 		display: block;
 		padding: 2em 5%;
 	}
-
 }
 @media screen and (min-width: 1000px) {
 	.direccion
 	{
-		
 		ul 
 		{
 			display: inline-block;
@@ -553,18 +710,24 @@ header
 @media screen and (min-width: 1200px) {
 	.direccion
 	{	
-		max-width: 70%;
+		width: 65%;
 		float: right;
 		ul 
 		{
-			padding: 3em 4%;
-			max-width: 20%;
+			padding: 3em 0 3em 2%;
+			max-width: 30%;
 			margin: 0;
 			float: left;
+		}
+		li
+		{
+			padding-right: 0;
+			width: 100%;
 		}
 		.ver 
 		{
 			font-size: 1.5em;
+			padding: 0 0 0 2%;
 		}
 	}
 	.contacto
@@ -572,14 +735,14 @@ header
 		.datos
 		{	
 			max-width: 30%;
-			padding: 2em 5% 2em 5%;
+			padding: 2em 0% 2em 5%;
 			float: left;
 		}
 	}
 	.mapa
 	{
 		clear: both;
+		width: 100%;
 	}
-	
 }
 

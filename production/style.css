@@ -331,6 +331,13 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+*,
+*:after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 h1, h2, h3, h4, h5, h6, span, .enl {
   font-family: 'Lato', sans-serif;
   font-weight: 700; }
@@ -400,7 +407,40 @@ header img {
     header .menu li {
       float: left;
       padding: 0.5em 3%;
-      font-size: 0.8em; } }
+      font-size: 0.9em; }
+    header .menu .sombra_curva {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      display: inline-block;
+      position: relative; }
+    header .menu .sombra_curva:before, header .menu .sombra_curva:after {
+      pointer-events: none;
+      position: absolute;
+      content: '';
+      left: -20%;
+      width: 140%;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      height: 4px;
+      opacity: 0;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: opacity;
+      transition-property: opacity; }
+    header .menu .sombra_curva:before {
+      bottom: 100%;
+      background: -webkit-radial-gradient(50% 150%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+      background: radial-gradient(ellipse at 50% 150%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%); }
+    header .menu .sombra_curva:after {
+      top: 100%;
+      background: -webkit-radial-gradient(50% -50%, ellipse, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%);
+      background: radial-gradient(ellipse at 50% -50%, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 80%); }
+    header .menu .sombra_curva:hover:before, header .menu .sombra_curva:hover:after {
+      opacity: 1; } }
 @media screen and (min-width: 1000px) {
   .menu {
     line-height: 2em; }
@@ -409,11 +449,11 @@ header img {
 @media screen and (min-width: 1200px) {
   header img {
     margin: 1em 0 0 2em; }
-  header .menu ul {
-    padding: 0 5% 0 0; }
-  header .menu li {
-    font-size: 1.2em;
-    padding: 0 5%; } }
+  header .menu {
+    width: 55%; }
+    header .menu li {
+      font-size: 0.8em;
+      padding: 0 4%; } }
 .portada {
   margin: 2em 0 3em; }
   .portada h1 {
@@ -449,16 +489,17 @@ header img {
   .entorno {
     display: block; }
     .entorno #superior {
-      width: 45%;
+      width: 35%;
       height: auto;
-      padding: 3em 2%;
+      padding: 2em 3%;
       float: left;
       line-height: 2em;
-      font-size: 1.2em; }
+      font-size: 1em;
+      clear: both; }
     .entorno #inferior {
       display: block;
       width: 30%;
-      padding: 12em 1.5% 8em;
+      padding: 5em 1% 18em;
       float: right;
       line-height: 2em; }
       .entorno #inferior i {
@@ -466,12 +507,24 @@ header img {
 
   .portada h1 {
     font-size: 1.4em;
-    padding: 7em auto 0;
+    padding-top: 4.5em;
     clear: both;
     margin: 0; }
 
   .mail a {
     background-color: #f1f2ed; } }
+.scroll-top, .fa-arrow-circle-up {
+  width: 40px;
+  height: 40px;
+  opacity: 0.4;
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  display: none;
+  text-indent: -9999px;
+  z-index: 2000;
+  background: url(images/arrowtop.png) no-repeat; }
+
 .necesitas {
   padding: 2em 0;
   max-width: 100%;
@@ -507,6 +560,9 @@ header img {
     background: url(images/depart_desarrollo_web.png) no-repeat 30% 32em; }
     .DeWe p {
       margin-bottom: 24em; } }
+@media screen and (min-width: 1200px) {
+  .AnPo h2 {
+    padding: 1em 1em; } }
 .nosotros {
   max-width: 100%;
   padding: 2em 0;
@@ -518,18 +574,46 @@ header img {
   .nosotros p {
     padding: 0 7%; }
 
+@media screen and (min-width: 1200px) {
+  .nosotros {
+    display: none; } }
 .portfolio {
   max-width: 100%;
   height: auto;
-  overflow: hidden; }
+  overflow: hidden;
+  padding-bottom: 4em;
+  background-color: #e2e2da; }
   .portfolio h2 {
     text-align: center;
-    background-color: rgba(123, 123, 127, 0.8);
     padding: 1em;
-    margin: 0 1%; }
+    margin: 4em 1% 0; }
   .portfolio img {
     padding: 2em 0;
     max-width: 100%; }
+
+#portfolio, #departament {
+  position: relative; }
+
+#portfolio::before, #portfolio::after, #departament::before, #departament::after {
+  position: absolute;
+  content: '';
+  pointer-events: none; }
+
+.triangulos::before, .triangulos::after {
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%) rotate(45deg); }
+
+.triangulos::before {
+  background: white;
+  top: -50px; }
+
+.triangulos::after {
+  background: #d6c2ad;
+  bottom: -50px;
+  z-index: 10; }
 
 @media screen and (min-width: 1000px) {
   .secondcustomer {
@@ -537,7 +621,8 @@ header img {
 .contacto {
   overflow: hidden;
   max-width: 100%;
-  border-top: 10px solid rgba(123, 123, 127, 0.8); }
+  border-top: 150px solid #d6c2ad;
+  clear: both; }
   .contacto .datos {
     max-width: 84%;
     height: auto;
@@ -582,6 +667,7 @@ header img {
       color: #fff;
       background: rgba(0, 0, 0, 0.8);
       line-height: 100%;
+      padding: 0.5em;
       text-align: center;
       margin: 0 0 0 3%; }
     .contacto .datos em.helper:after {
@@ -599,14 +685,62 @@ header img {
     max-width: 100%; }
   .contacto small a {
     padding: 2em 10%; }
-  .contacto .redes p {
-    padding-left: 6%; }
-  .contacto .redes .fa-twitter-square {
-    color: #00bdf5; }
-  .contacto .redes .fa-linkedin-square {
-    color: #0072b2; }
-  .contacto .redes .fa-google-plus-square {
-    color: #dd4c39; }
+  .contacto .redes {
+    @-webkit-keyframes flota {
+      50% {
+        -webkit-transform: translateY(-3px);
+        transform: translateY(-3px); }
+
+      100% {
+        -webkit-transform: translateY(-6px);
+        transform: translateY(-6px); } }
+
+    @keyframes flota {
+      50% {
+        -webkit-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+        transform: translateY(-3px); }
+
+      100% {
+        -webkit-transform: translateY(-6px);
+        -ms-transform: translateY(-6px);
+        transform: translateY(-6px); } }
+ }
+    .contacto .redes p {
+      padding-left: 6%; }
+    .contacto .redes .fa-twitter-square {
+      color: #00bdf5; }
+    .contacto .redes .fa-linkedin-square {
+      color: #0072b2; }
+    .contacto .redes .fa-google-plus-square {
+      color: #dd4c39; }
+    .contacto .redes .flota {
+      display: inline-block;
+      -webkit-transition-duration: .5s;
+      transition-duration: .5s;
+      -webkit-transition-property: -webkit-transform;
+      transition-property: transform;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0); }
+    .contacto .redes .flota:hover {
+      -webkit-transform: translateY(-6px);
+      -ms-transform: translateY(-6px);
+      transform: translateY(-6px);
+      -webkit-animation-name: hover;
+      animation-name: hover;
+      -webkit-animation-duration: 1.5s;
+      animation-duration: 1.5s;
+      -webkit-animation-delay: 0.3s;
+      animation-delay: 0.3s;
+      -webkit-animation-timing-function: linear;
+      animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate; }
   .contacto .direccion_a {
     padding-left: 2.5em; }
   .contacto .direccion_b {
@@ -672,20 +806,25 @@ header img {
     margin-left: 0em; } }
 @media screen and (min-width: 1200px) {
   .direccion {
-    max-width: 70%;
+    width: 65%;
     float: right; }
     .direccion ul {
-      padding: 3em 4%;
-      max-width: 20%;
+      padding: 3em 0 3em 2%;
+      max-width: 30%;
       margin: 0;
       float: left; }
+    .direccion li {
+      padding-right: 0;
+      width: 100%; }
     .direccion .ver {
-      font-size: 1.5em; }
+      font-size: 1.5em;
+      padding: 0 0 0 2%; }
 
   .contacto .datos {
     max-width: 30%;
-    padding: 2em 5% 2em 5%;
+    padding: 2em 0% 2em 5%;
     float: left; }
 
   .mapa {
-    clear: both; } }
+    clear: both;
+    width: 100%; } }

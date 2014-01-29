@@ -12,7 +12,11 @@
 	<link rel="stylesheet" href="css/font-awesome.css">
 	<link rel="stylesheet" href="css/grids.css">
 	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/messages_es.js"></script>
 	<script src="js/tamano.js"></script>
+	<script src="js/formulario.js"></script>
+	<script src="js/scroll.js"></script>
 </head>
 <body>
 	<section class="inicio">
@@ -20,11 +24,11 @@
 			<img src="images/diingLogo.svg">
 			<nav class="menu">
 				<ul>
-					<li><a href="#necesitas">Qué necesitas</a></li>
-					<li><a href="#nosotros">Nosotros</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="">Blog</a></li>
-					<li><a href="#contacto">Contacto</a></li>
+					<li><a rel="Qué necesitas" class="sombra_curva" href="#necesitas">Qué necesitas</a></li>
+					<li><a rel="Nosotros" class="sombra_curva" id="nos" href="#nosotros">Nosotros</a></li>
+					<li><a rel="Portfolio" class="sombra_curva" href="#portfolio">Portfolio</a></li>
+					<li><a rel="Blog" class="sombra_curva" href="">Blog</a></li>
+					<li><a rel="Contacto" class="sombra_curva" href="#contacto">Contacto</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -41,6 +45,7 @@
 		</section>
 	</section>
 	<div class="wrapper">
+		<a href="#" class="scroll-top"></i>Ir Arriba</a>
 		<section class="necesitas" id="necesitas">
 			<div class="col6 DiGr" id="col">
 				<h2>Diseño Gráfico</h2>
@@ -69,27 +74,29 @@
 			<h2>Nosotros</h2>
 			<p>Somos una empresa joven con un equipo multidisciplinar cuya pasión por el mundo web hace de ésta nuestro trabajo. Contamos con departamento de diseño gráfico, uno de diseño de experiencia de usuario y otro de desarrollo web trabajando juntos en cada proyecto. Cada uno aporta lo mejor de si mismo para dar como resultado la imagen digital que necesitas para tu proyecto web.</p>
 		</section>
-		<section class="portfolio" id="portfolio">
+		<section class="portfolio triangulos" id="portfolio">
 			<h2>Portfolio</h2>
 			<section class="firstcustomer">
-				<div class="col6" id="col">
+				<div class="col6" id="col" rel="0">
 					<img src="images/telco_website.jpg" alt="Website de la empresa Telco">
 				</div>
-				<div class="col6" id="col">
+				<div class="ventana">
+				<div class="col6 ppal" id="col" rel="1">
 					<img src="images/evolve_website.png" alt="Website de la empresa Evolve">
 				</div>
-				<div class="col6" id="col">
+				</div>
+				<div class="col6" id="col" rel="2">
 					<img src="images/tecnology_website.jpg" alt="Website de la empresa Tecnology">
 				</div>
 			</section>
 			<section class="secondcustomer">
-				<div class="col6" id="col">
+				<div class="col6" id="col" rel="3">
 					<img src="images/incrediflash_website.jpg" alt="Website de la empresa Incrediflash">
 				</div>
-				<div class="col6" id="col">
+				<div class="col6" id="col" rel="4">
 					<img src="images/stumpleupon.jpg" alt="Website de la empresa Stumpleupon">
 				</div>
-				<div class="col6" id="col">
+				<div class="col6" id="col" rel="5">
 					<img src="images/promotion_website.jpg" alt="Website de promoción">
 				</div>
 			</section>
@@ -115,8 +122,8 @@
 					<label for="telefono">¿A qué teléfono te llamamos?</label>
 					<input class="required number" id="telefono" title="Telefono" type="text" name="telefono">
 				</div>
-				<div data-helper="Correo Electrónico">
-					<label for="email">¿A qué email te escribimos? No aceptamos spam, lo siento!</label>
+				<div data-helper="No aceptamos spam, lo siento!">
+					<label for="email">¿A qué email te escribimos?</label>
 					<input class="required email" id="email" title="Email" type="email" name="email">
 				</div>
 				<div data-helper="Comentarios">
@@ -146,13 +153,13 @@
 		<section class="redes">
 				<p>Siguenos a traves de:</p>
 				<nav class="col1">
-					<a href=""><i class="fa fa-twitter-square fa-3x"></i></a>
+					<a href=""><i class="fa fa-twitter-square fa-3x flota"></i></a>
 				</nav>
 				<nav class="col1">
-					<a href=""><i class="fa fa-linkedin-square fa-3x"></i></a>
+					<a href=""><i class="fa fa-linkedin-square fa-3x flota"></i></a>
 				</nav>
 				<nav class="col1">
-					<a href=""><i class="fa fa-google-plus-square fa-3x"></i></a>
+					<a href=""><i class="fa fa-google-plus-square fa-3x flota"></i></a>
 				</nav>
 			</section>
 		<section class="mapa">
@@ -170,7 +177,7 @@
 						</nav>
 					</div>
 					<div class="col1">
-					<li class="col1"><a href=""></a>Nosotros</li>
+					<li><a href=""></a>Nosotros</li>
 						<nav class="secondstep">
 							<ul>
 								<li><a href=""></a>Diseño gráfico</li>

@@ -1,0 +1,105 @@
+.inicio_nos, .nosotros_nos, .departament
+{
+	background-color: rgba(226,226,218,1);
+}
+
+.inicio_nos
+{
+	overflow: hidden;
+	max-width: 100%;
+}
+.nosotros_nos
+{
+	max-width: 100%;
+	padding: 2em 0;
+	line-height: 1.5em;
+	h2
+	{
+		text-align: center;
+		padding: 1em;
+	}
+	p
+	{
+		padding: 0 7%;
+	}
+}
+.departament
+{
+	max-width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.triangulos::before
+{
+	display: none;
+}
+.foto
+{
+	margin: 0 auto;
+	padding: 2em 2% 6em;
+}
+#grafico, #develop, #marketing, #bbdd
+{
+	background: url(http://placehold.it/300x350);
+	width: 300px;
+	height: 350px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+#grafico_b, #develop_b, #marketing_b, #bbdd_b
+{
+	background-color: rgba(255,255,255,0.5);
+	width: 300px;
+	height: 350px;
+	visibility: hidden;
+	h4
+	{
+		padding: 1em 0;
+		font-size: 1.3em;
+	}
+	h5
+	{
+		font-size: 1em;
+	}
+	p 
+	{
+		margin-top: 4em;
+	}
+	.conecta
+	{
+		margin-top: 4em;
+		.fa-twitter-square
+		{
+			color: rgb(0,189,245);
+		}
+		.fa-linkedin-square
+		{
+			color: rgb(0,114,178);
+		}
+		.fa-google-plus-square
+		{
+			color: rgb(221,76,57);
+		}
+		.fa-facebook-square
+		{
+			color: rgb(59,89,152);
+		}
+	}
+}
+#grafico:hover #grafico_b
+{
+	visibility: visible;
+}
+#develop:hover #develop_b
+{
+	visibility: visible;
+}
+#marketing:hover #marketing_b
+{
+	visibility: visible;
+}
+#bbdd:hover #bbdd_b
+{
+	visibility: visible;
+}
